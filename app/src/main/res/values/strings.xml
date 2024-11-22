@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CryptoTracker</string>
+    <string name="request_time_out">Request Timeout!</string>
+    <string name="too_many_requests">Oops! Your quota exceeded.</string>
+    <string name="no_internet">Sorry! No internet access.</string>
+    <string name="server_error">There is problem with server.</string>
+    <string name="serialization_error">There might be some error with serialization or desialization.</string>
+    <string name="unknown_error">Some unknow error found.\n</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="price">Price</string>
+    <string name="change_last_24hrs">Change Last 24 hr\n</string>
+</resources>
