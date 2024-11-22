@@ -35,14 +35,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.PreviewDynamicColors
 import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zahab.cryptotracker.R
 import com.zahab.cryptotracker.crypto.presentation.coin_detail.components.InfoCard
 import com.zahab.cryptotracker.crypto.presentation.coin_list.CoinListState
-import com.zahab.cryptotracker.crypto.presentation.coin_list.components.previewCoin
+import com.zahab.cryptotracker.crypto.presentation.coin_list.CoinListStateProvider
 import com.zahab.cryptotracker.crypto.presentation.models.toDisplayPriceNumber
 import com.zahab.cryptotracker.ui.theme.CryptoTrackerTheme
 import com.zahab.cryptotracker.ui.theme.greenBackground
@@ -189,14 +189,15 @@ fun CoinDetailScreen(
     }
 }
 
-@PreviewDynamicColors
 @PreviewLightDark
 @Composable
-fun CoinDetailScreenPreview() {
+fun CoinDetailScreenPreview(
+    @PreviewParameter(CoinListStateProvider::class) state: CoinListState
+) {
     CryptoTrackerTheme {
         CoinDetailScreen(
             modifier = Modifier.background(MaterialTheme.colorScheme.background),
-            state = CoinListState(selectedCoin = previewCoin)
+            state = state
         )
     }
 }

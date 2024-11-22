@@ -10,8 +10,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewDynamicColors
 import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.zahab.cryptotracker.crypto.presentation.coin_list.components.CoinListItem
@@ -51,24 +54,18 @@ fun CoinListScreen(
             }
         }
     }
-
 }
 
-@Preview
 @PreviewLightDark
 @Composable
-fun CoinListScreenPreview() {
+fun CoinListScreenPreview(
+    @PreviewParameter(CoinListStateProvider::class) state: CoinListState
+) {
     CryptoTrackerTheme {
-
         CoinListScreen(
-            state = CoinListState(
-                coins = (1..100).map {
-                    previewCoin
-                }
-            ),
+            state = state,
             modifier = Modifier.background(MaterialTheme.colorScheme.background),
             onAction = {}
         )
-
     }
 }
