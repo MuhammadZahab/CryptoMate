@@ -72,10 +72,9 @@ dependencies {
 
     implementation(libs.bundles.ktor)
 
-    testImplementation(libs.junit)
+    testImplementation(libs.bundles.junit)
 
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.bundles.ui.tests)
+
 }
